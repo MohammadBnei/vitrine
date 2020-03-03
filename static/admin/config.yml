@@ -18,15 +18,15 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
-    - name: "landing"
-      label: "Blog"
-      folder: "content/landing"
-      create: true
-      slug: "{{slug}}"
-      editor:
-      preview: false
-      fields:
-        - { label: "Title", name: "title", widget: "string" }
-        - { label: "Description", name: "description", widget: "string" }
-        - { label: "item", name: "item", widget: "string", default: "landing"}
-        - { label: "Body", name: "body", widget: "markdown" }
+  - name: "landing"
+    label: "Blog"
+    folder: "content/landing"
+    create: true
+    slug: "{{slug}}"
+    editor:
+    preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "item", name: "item", widget: "string", default: "landing"}
+      - { label: "Body", name: "body", widget: "markdown" }
