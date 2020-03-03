@@ -26,6 +26,17 @@ const Layout = ({ location, title, children }) => {
         >
           {title}
         </Link>
+        &nbsp; | &nbsp;
+        <Link
+          style={{
+            boxShadow: `none`,
+            textDecoration: `none`,
+            color: `inherit`,
+          }}
+          to={`/blogs`}
+        >
+          Blogs
+        </Link>
       </h1>
     )
   } else {
@@ -54,7 +65,7 @@ const Layout = ({ location, title, children }) => {
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(48),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
