@@ -1,23 +1,30 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import LandingPostTemplate from "../templates/landing-post"
+import LandingPostTemplate from "../templates/landing"
 
+import { css } from 'emotion'
+import WhyAgentPostTemplate from "../templates/whyAgent"
+import CasePostTemplate from "../templates/case"
+import JoinUsPostTemplate from "../templates/joinUs"
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const landingPosts = data.allMarkdownRemark.edges.filter(({node}) => node?.frontmatter?.item === 'landing')
-
+  const landingPosts = data.allMarkdownRemark.edges.filter(({ node }) => node?.frontmatter?.item === 'landing')
+  const indexPost = data.allMarkdownRemark.edges.find(({ node }) => node.frontmatter.item === 'firstView')
+  const whyAgentPost = data.allMarkdownRemark.edges.find(({ node }) => node.frontmatter.item === 'whyAgent')
+  const casePost = data.allMarkdownRemark.edges.find(({ node }) => node.frontmatter.item === 'case')
+  const joinUsPost = data.allMarkdownRemark.edges.find(({ node }) => node.frontmatter.item === 'joinUs')
+  
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      {landingPosts.map(({ node }) => (
-        <LandingPostTemplate node={node} key={node.id}/>
-      ))}
+      <LandingPostTemplate node={indexPost.node} />
+      <WhyAgentPostTemplate node={whyAgentPost.node} />
+      <CasePostTemplate node={casePost.node} />
+      <JoinUsPostTemplate node={joinUsPost.node} />
     </Layout>
   )
 }

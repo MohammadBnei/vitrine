@@ -8,8 +8,10 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "gatsby": "^2.19.25",
     "gatsby-image": "^2.2.42",
+    "gatsby-plugin-emotion": "^4.1.23",
     "gatsby-plugin-feed": "^2.3.27",
     "gatsby-plugin-google-analytics": "^2.1.36",
     "gatsby-plugin-manifest": "^2.2.42",
@@ -52,7 +54,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -p 3000 -H 0.0.0.0",
+    "develop": "gatsby develop -p 8000 -H 0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
